@@ -1,0 +1,58 @@
+html, body {
+    height: 100%; /* sätter höjden av både html och body till 100% av nuvarande fönstrets höjd*/
+    margin: 0; /* det här ser till att det inte finns något tomt område runt själva sidan*/
+}
+
+#MittPopup {
+display: none; /* Popuprutan kommer inte visas när sidan laddas tills annan kod säger till den att visa sig*/
+position:fixed; /*Popuprutan kommer sitta fast relativt till fönstret och rör sig inte när sidan scrollars*/
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%); /* dessa 3 andvänds tillsammans för att centrera popupfönstret i mitten av skärmen*/
+padding: 20px; /*skapar lite utrymmer runt sjävla informationen inom popuprutan så att det ser lite bättre ut*/
+background-color: #fff; /*ser bara till så att backgrunden av popuprutan är vit/samma färg som backgrunden*/
+border: 1px solid #ccc;/*skapar en grå tunn ram runt popuprutan så det är lättare att skilja mellan vad som är rutan och vad som är huvudsidan*/
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* inte super nödvändigt, skapar bara en effect av en skugga så att själva popup ser ut att vara framför själva huvudsidan*/
+z-index: 1; /*bestämmer hur element staplas och ser till så att popuprutan är synlig över andra element på sidan*/
+max-height: 80vh;
+max-width: 80%; /* dessa 2 ser till att sätta maximal höjd och bredd till 80% av fönstrets storlek så att popuprutan är lagom stor*/
+overflow-y: auto; /* om popuprutans information är högre än skärmen så lägs det till en scroll bar så att man kan titta på det som inte är på skärmen*/
+}
+
+#StängPopup {
+    cursor: pointer; /*gör om muspilen till en handpekare när du är över något klickbart i popupfönstret, i detta fall x för att gå ut ur popupfönstret*/
+  }
+
+  #PopupInnehåll h1, #PopupInnehåll h2, #PopupInnehåll h3, #PopupInnehåll h4{
+    font-size: 1.5em; /* ser bara till att allt skrivet i h1 texten har samma storlek på texten som det skrivit i de andra h() värden*/
+  }
+
+  #PopupInnehåll h2 {
+    text-align: center; /* bara här för design och ser till att i popupfönstret så ska ""Lägg in ny information" visas i mitten av det*/
+  }
+
+    #NyInformationKnapp, #SökbarInskrift {
+    display: block;
+    margin: 0 auto; /* de här 2 ser till så att avståndet mellan toppen av sidan och mellan varandra är bra*/
+  }
+
+  #SökningsSektion {
+      min-height: 100vh;
+    text-align: center;
+    margin-top: 20px; /* dessa säger var sökbaren ska ligga på sidan vilket är att säga i mitten och högt upp* dessutom at den ska ha 20pixlar avstånd från lägga till knappen*/
+  }
+
+  #SökResultat {
+    margin-top: 10px; /* ser till att det finns ett avstånd av 10 pixlar mellan sökbaren och resultaten under*/
+  }
+
+  #PopupInnehåll h4 {
+    margin-bottom: 0px; /* ser till att det är så lite avstånd mellan h4 texten och nästa text under den (max 200 tecken)*/
+  }
+
+
+  #PopupInnehåll textarea {
+    width: 100%;
+    height: 100px; 
+    resize: both; /*gör så att beskrivnings inskrivnings området är så brett som det kan vara inom parametrarna av popupfönstret och 100 i höjd, men att man kan ändra på båda dessas värde genom att sträcka på textrutan*/
+  }

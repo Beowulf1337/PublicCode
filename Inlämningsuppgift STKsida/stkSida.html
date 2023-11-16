@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="styles\stkSida.css" /> <!--länkar ihop css koden in i html koden-->>
+</head>
+<body>
+    <button id="NyInformationKnapp">Lägg till ny film i databasen</button> <!--skapar en knapp som det står på:Lägg till ny film i databasen och som öppnar ett nytt formulär för att skriva i och spara -->>
+    <div id="MittPopup">
+        <span id="StängPopup">&times;</span> <!--skapar en x knapp för att stänga popupfönster-->
+        <div id="PopupInnehåll"></div>
+    </div>
+    <div id="SökningsSektion">
+        <input type="text" id="SökbarInskrift" placeholder="Sök efter film i databasen"> <!--det här är en inmatningsruta som andvänds för att söka i localstorage efter sparade filminformations formulär genom att söka efter respektive filmnamn-->
+        <div id="SökResultat"></div>
+    </div>
+    <script src="scripts\sktSida.js"></script> <!--länkar ihop javascript koden in i html koden-->
+</body>
+</html>
